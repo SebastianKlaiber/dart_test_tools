@@ -8,6 +8,7 @@ import 'package:meta/meta.dart';
 class ConsolePrinter implements StreamConsumer<LogRecord> {
   final bool _warningsAreErrors;
 
+  // ignore: avoid_positional_boolean_parameters
   const ConsolePrinter([this._warningsAreErrors = false]);
 
   @override

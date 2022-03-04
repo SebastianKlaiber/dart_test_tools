@@ -1,11 +1,12 @@
+import 'package:logging/logging.dart';
 import 'package:meta/meta.dart';
 import 'package:stack_trace/stack_trace.dart';
 
 import 'console_printer.dart';
-import 'package:logging/logging.dart';
 
 @internal
 class GithubActionsPrinter extends ConsolePrinter {
+  // ignore: avoid_positional_boolean_parameters
   const GithubActionsPrinter([bool warningsAreErrors = false])
       : super(warningsAreErrors);
 
@@ -35,6 +36,7 @@ class GithubActionsPrinter extends ConsolePrinter {
         final fileName = frame.uri.isScheme('file')
             ? frame.uri.toFilePath()
             : frame.uri.toString();
+        // ignore: lines_longer_than_80_chars
         return ' file=$fileName,line=${frame.line},col=${frame.column},title=${frame.member}';
       }
     }
